@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>A-Frame Boilerplate</title>
+
+</head>
+
+<body>
+  <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+  <a-scene stats>
+
+    ${require('./objects/environment.html')}
+    <!-- Player -->
+    <!-- <a-entity listener wasd-controls camera look-controls></a-entity>
+    <a-entity static-body="shape: sphere; sphereRadius: 0.02;" vive-controls="hand: left" sphere-collider="objects: .cube;" grab></a-entity>
+    <a-entity static-body="shape: sphere; sphereRadius: 0.02;" vive-controls="hand: right" sphere-collider="objects: .cube;"
+      grab></a-entity>
+    <a-box sound-object class="cube" dynamic-body position="0 1 -1" width="0.5" height="0.5" depth="0.5" color="red"></a-box>
+    <a-box material="color:#1976d2 " static-body width="1000" height="0.001" depth="1000" visible="false"></a-box> -->
+
+    <a-assets>
+      <a-asset-item id="predator-obj" src="./assets/predator.obj"></a-asset-item>
+      <a-asset-item id="predator-mtl" src="./assets/predator.mtl"></a-asset-item>
+      <img id="texture" src="/assets/predator.png">
+      <a-mixin id="predator"></a-mixin>
+    </a-assets>
+
+    <!-- <a-entity mixin="predator" dynamic-body position="0 2 -3" obj-model="obj: #predator-obj" material="src: #texture"></a-entity> -->
+    <a-entity light="color: #fff; intensity: .5" position="0 8 0"></a-entity>
+
+    <!-- <a-entity gltf-model="url(/assets/stan-smith/scene.gltf)" position="0 0 -4" scale="0.1 0.1 0.1"></a-entity> -->
+    <a-entity gltf-model="url(/assets/yeezy/scene.gltf)" position="0 0 -4" scale="0.1 0.1 0.1"></a-entity>
+
+
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" static-body></a-plane>
+    <a-sky color="#ECECEC"></a-sky>
+
+  </a-scene>
+</body>
+
+</html>
